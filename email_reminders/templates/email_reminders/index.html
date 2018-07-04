@@ -1,0 +1,16 @@
+{% if latest_reminder_list %}
+  <table>
+    <tbody>
+      <tr>
+        <td><strong>Task</strong></td><td><strong>Due Date</strong></td>
+      </tr>
+      {% for reminder in latest_reminder_list %}
+        <tr>
+          <th><a href="/reminders/{{ reminder.id }}/">{{ reminder.reminder_subject }}</a></th>
+          <th><a href="/reminders/{{ reminder.id }}/">{{ reminder.reminder_date }}</a></th>
+      </tr>
+      {% endfor %}
+    </tbody>
+ </table>
+    <p>No reminders are available.</p>
+{% endif %}
